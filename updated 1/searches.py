@@ -7,9 +7,10 @@ from datetime import date, timedelta
 import requests
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 from src.browser import Browser
-
+from src.utils import Utils
 
 class Searches:
     def __init__(self, browser: Browser):
