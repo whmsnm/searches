@@ -54,8 +54,10 @@ class Searches:
             + f"Starting {self.browser.browserType.capitalize()} Edge Bing searches...",
         )
 
-        i = 0
         search_terms = self.getGoogleTrends(numberOfSearches)
+        self.webdriver.get("https://bing.com")
+        
+        i = 0
         for word in search_terms:
             i += 1
             logging.info("[BING] " + f"{i}/{numberOfSearches}")
@@ -78,7 +80,6 @@ class Searches:
     def bingSearch(self, word: str):
         while True:
             try:
-                self.webdriver.get("https://bing.com")
                 self.browser.utils.waitUntilClickable(By.ID, "sb_form_q")
                 searchbar = self.webdriver.find_element(By.ID, "sb_form_q")
                 searchbar.send_keys(word)
