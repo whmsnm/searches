@@ -88,7 +88,7 @@ class Searches:
                     delay = random.uniform(0.2, 1)
                     time.sleep(delay)
                 searchbar.submit()
-                time.sleep(Utils.randomSeconds(100, 180))
+                time.sleep(Utils.randomSeconds(200, 300))
                 return self.browser.utils.getBingAccountPoints()
             except TimeoutException:
                 logging.error("[BING] " + "Timeout, retrying in 5 seconds...")
